@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 @Builder
 @AllArgsConstructor
-public class Participent {
+public class Participents {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_Participent;
@@ -26,7 +26,7 @@ public class Participent {
      @JoinTable(name = "participent_activite",
      joinColumns = @JoinColumn(name = "id_Participent"),
      inverseJoinColumns = @JoinColumn(name = "id_Activite"))
-     private List<Responsable>responsables=new ArrayList<Responsable>();
+     private List<Responsables>responsables=new ArrayList<Responsables>();
 
 
 }

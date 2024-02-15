@@ -3,8 +3,8 @@ package net.seny.stcmanager.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
+
+import java.util.*;
 import java.util.List;
 @Data
 @NoArgsConstructor
@@ -19,8 +19,8 @@ public class Activites {
     private String titre;
     private String description;
     private String type;
-    private LocalDate dateDebut;
-    private LocalDate dateFin;
+    private Date dateDebut;
+    private Date dateFin;
     private String etat;
    @ManyToMany
    @JoinTable(name = "T_Activite_Exerice",
@@ -28,5 +28,5 @@ public class Activites {
            inverseJoinColumns = @JoinColumn(name = "id_exercice")
    )
 
-    private List<Participent>participents=new ArrayList<Participent>();
+    private List<Participents>participents=new ArrayList<Participents>();
 }

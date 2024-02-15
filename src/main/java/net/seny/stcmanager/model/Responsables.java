@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity
 @Data
-public class Responsable {
+public class Responsables {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_Responsable;

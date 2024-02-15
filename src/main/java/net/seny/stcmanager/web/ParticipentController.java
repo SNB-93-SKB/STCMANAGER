@@ -1,6 +1,6 @@
 package net.seny.stcmanager.web;
 
-import net.seny.stcmanager.model.Participent;
+import net.seny.stcmanager.model.Participents;
 import net.seny.stcmanager.service.ServiceParticpent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -12,6 +12,7 @@ import java.util.List;
 @RestController
 @EnableAutoConfiguration
 @RequestMapping(value = "/stcparticipent")
+@CrossOrigin(origins="http://localhost:4200")
 public class ParticipentController {
 
     //Injection de dépendance
@@ -20,18 +21,18 @@ public class ParticipentController {
 
     //insérer des données dans la base de donnéé avec la méthode save.
     @PostMapping("/save")
-    public Participent save( @PathVariable Participent p){
+    public Participents save(@RequestBody Participents p){
         service.save(p);
        return p;
     }
     //Lister le nombre de participents
     @GetMapping("/list")
-    public List <Participent>list(){
+    public List <Participents>list(){
         return service.getAll();
     }
     //lister les participents par leurs identifiants
     @GetMapping("/list/{id}")
-    public Participent findById(@PathVariable Long  id){
+    public Participents findById(@PathVariable Long  id){
 
         return service.getById(id);
     }
@@ -42,7 +43,7 @@ public class ParticipentController {
     }
     @GetMapping("/update/{id}")
     public String update(Model model, @PathVariable(value = "id")Long id){
-      Participent p=service.getById(id);
+      Participents p=service.getById(id);
       return "modification réussite";
     }
 }

@@ -20,7 +20,7 @@ public class Exercices {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_excercice;
-    private Date année;
+    private Date annee;
     private Date datedebut;
     private Date datefin;
     private String status;

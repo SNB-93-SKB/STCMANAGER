@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @EnableAutoConfiguration
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(value = "/stcactivite")
 public class ActiviteController {
 

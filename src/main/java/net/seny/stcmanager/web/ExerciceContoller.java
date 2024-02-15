@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @EnableAutoConfiguration
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/stcExercice")
 @RestController
 public class ExerciceContoller {
